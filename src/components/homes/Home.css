@@ -1,0 +1,192 @@
+.home {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  object-fit: cover;
+  width: 100%;
+  color: #fff;
+  padding-top: 10vh;
+}
+
+.homeContainer {
+  position: relative;
+}
+
+.coverImage {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+}
+
+.coverImage img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.homeContainer .content {
+  padding: 50px; /* Reduced padding for better spacing on smaller screens */
+}
+
+.homeContainer h1 {
+  margin-top: 10px;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 800;
+  background-image: url("../../assets/textImg.jpg");
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+.coverImage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 88;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.homeContainer .rating {
+  margin: 10px 0;
+}
+
+.rating label {
+  margin: 2 0px;
+}
+
+.rating span {
+  background-color: #5c5c5c;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.homeContainer .cast {
+  margin: 20px 0;
+}
+
+.cast {
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.cast h4 span {
+  color: #e50813;
+}
+
+.playButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playButton .img {
+  position: relative;
+}
+
+.change {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.playButton img {
+  width: 70px; /* Adjusted size for smaller screens */
+  height: 70px; /* Adjusted size for smaller screens */
+  margin-right: 15px; /* Adjusted margin */
+}
+
+.playButton button:hover .change {
+  opacity: 1;
+  color: #e50813;
+}
+
+.playButton button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  background: none;
+  font-size: 18px; /* Slightly smaller font size for mobile */
+  font-weight: 500;
+  letter-spacing: 2px;
+  transition: 0.5s;
+}
+
+.row {
+  width: 100%; /* Full width for smaller screens */
+}
+
+/* Responsive Adjustments for Mobile View */
+@media screen and (max-width: 768px) {
+  .home {
+    padding-top: 5vh; /* Reduced padding for smaller screens */
+  }
+
+  .homeContainer .content {
+    padding: 20px; /* Adjusted padding */
+  }
+
+  .homeContainer h1 {
+    font-size: 50px; /* Reduced font size for smaller screens */
+    line-height: 1.2; /* Adjusted line height */
+  }
+
+  .rating span {
+    font-size: 14px; /* Smaller font for ratings */
+    padding: 3px; /* Reduced padding */
+  }
+
+  .cast {
+    font-size: 14px; /* Smaller font size for cast info */
+  }
+
+  .playButton img {
+    width: 50px; /* Smaller play button size */
+    height: 50px; /* Smaller play button size */
+  }
+
+  .playButton button {
+    font-size: 14px; /* Smaller font size for button */
+  }
+
+  .row {
+    width: 100%; /* Full width */
+    margin: 0; /* Adjust margin */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .homeContainer h1 {
+    font-size: 40px; /* Further reduce font size for very small screens */
+  }
+
+  .homeContainer .content {
+    padding: 10px; /* Minimal padding */
+  }
+
+  .playButton img {
+    width: 40px; /* Further smaller play button size */
+    height: 40px;
+  }
+
+  .playButton button {
+    font-size: 12px; /* Smaller font size */
+  }
+}
